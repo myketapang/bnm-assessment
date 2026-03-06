@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Part 1b: Outlier Detection Analysis</title>
+    <title>Part 1b: Outlier Detection</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
     <style>
@@ -89,15 +89,6 @@
             border-radius: 10px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
-        .chart-container-small {
-            position: relative;
-            width: 100%;
-            height: 300px;
-            margin: 20px 0;
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 8px;
-        }
         table {
             width: 100%;
             border-collapse: collapse;
@@ -119,9 +110,6 @@
         }
         table tr:hover {
             background: #f5f5f5;
-        }
-        table tr:last-child td {
-            border-bottom: none;
         }
         .nav-section {
             display: flex;
@@ -165,9 +153,6 @@
             margin: 8px 0;
             color: #333;
         }
-        .row-gap {
-            margin-bottom: 40px;
-        }
         footer {
             background: #222;
             color: white;
@@ -176,89 +161,70 @@
             margin-top: 60px;
             border-top: 3px solid #667eea;
         }
-        footer p {
-            margin: 5px 0;
-        }
-        .grid-2 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin: 30px 0;
-        }
-        .section-divider {
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #667eea, transparent);
-            margin: 50px 0;
-        }
     </style>
 </head>
 <body>
     <nav class="navbar navbar-dark">
         <div class="container-fluid">
             <span class="navbar-brand">🏦 BNM Assessment Suite</span>
-            <span style="color: white;">Part 1b - Anomaly</span>
+            <span style="color: white;">Part 1b</span>
         </div>
     </nav>
 
     <div class="container">
-        <h1>Part 1b: Outlier Detection Analysis</h1>
-        <p class="subtitle">Generated: 2026-03-06 12:23:12</p>
+        <h1>Part 1b: Outlier Detection</h1>
+        <p class="subtitle">Generated: 2026-03-06 21:22:35</p>
         
         
         <div class="metric-cards">
             <div class="metric-card">
-                <div class="metric-label">Daily Records</div>
+                <div class="metric-label">Records</div>
                 <div class="metric-value">1,095</div>
             </div>
             <div class="metric-card">
-                <div class="metric-label">Time Period</div>
+                <div class="metric-label">Period</div>
                 <div class="metric-value">3 Years</div>
             </div>
             <div class="metric-card">
-                <div class="metric-label">Anomalies Detected</div>
+                <div class="metric-label">Anomalies</div>
                 <div class="metric-value">15</div>
             </div>
             <div class="metric-card">
-                <div class="metric-label">Detection Methods</div>
+                <div class="metric-label">Methods</div>
                 <div class="metric-value">3</div>
             </div>
         </div>
 
-        <h2>🌐 National Level Outlier Detection</h2>
+        <h2>Detection Methods</h2>
         <table>
             <tr>
-                <th>Detection Method</th>
-                <th>Anomalies Found</th>
-                <th>Description</th>
+                <th>Method</th>
+                <th>Anomalies</th>
+                <th>Precision</th>
             </tr>
             <tr>
-                <td>Z-Score (>3σ)</td>
+                <td>Z-Score</td>
                 <td>12</td>
-                <td>Standard deviation based detection</td>
+                <td>High</td>
             </tr>
             <tr>
-                <td>IQR Method</td>
+                <td>IQR</td>
                 <td>10</td>
-                <td>Interquartile range analysis</td>
+                <td>High</td>
             </tr>
             <tr>
-                <td>MAD Method</td>
+                <td>MAD</td>
                 <td>8</td>
-                <td>Median absolute deviation</td>
+                <td>High</td>
             </tr>
             <tr>
-                <td><strong>Ensemble (2+)</strong></td>
+                <td><strong>Ensemble</strong></td>
                 <td><strong>15</strong></td>
-                <td><strong>99% precision - USE THIS</strong></td>
+                <td><strong>99%</strong></td>
             </tr>
         </table>
 
-        <h2>📊 Detected Anomalies</h2>
-        <div class="chart-container">
-            <canvas id="anomalyChart"></canvas>
-        </div>
-
-        <h2>🏥 Hospital-Level Analysis</h2>
+        <h2>Hospital Analysis</h2>
         <table>
             <tr>
                 <th>Hospital</th>
@@ -286,94 +252,15 @@
             </tr>
         </table>
 
-        <h2>🔍 Root Cause Classification</h2>
-        <div class="grid-2">
-            <div class="insight">
-                <strong>SPIKE (Positive Anomalies)</strong>
-                <ul>
-                    <li>Blood shortage alert</li>
-                    <li>Public campaign/awareness</li>
-                    <li>Bulk donation event</li>
-                    <li>Celebrity donation</li>
-                    <li>Social media viral post</li>
-                </ul>
-                <strong>Frequency:</strong> Monthly
-            </div>
-            <div class="insight">
-                <strong>DROP (Negative Anomalies)</strong>
-                <ul>
-                    <li>Facility scheduled maintenance</li>
-                    <li>Staff leave/shortage</li>
-                    <li>System outage</li>
-                    <li>Public holiday</li>
-                    <li>Bad weather</li>
-                    <li>Equipment malfunction</li>
-                </ul>
-                <strong>Frequency:</strong> Quarterly
-            </div>
-        </div>
-
-        <h2>⚙️ Operational Guidelines</h2>
         <div class="insight">
-            <strong>📋 Alert Thresholds & Actions</strong>
-            <ul>
-                <li><strong>Level 1 - GREEN:</strong> Range ±1.5σ from mean → Monitor, routine operations</li>
-                <li><strong>Level 2 - YELLOW:</strong> Range ±2.5σ from mean → Investigate if sustained >3 days, daily email</li>
-                <li><strong>Level 3 - RED:</strong> Range >3σ from mean → Immediate investigation & escalation, SMS + Phone call</li>
-            </ul>
-        </div>
-
-        <h2>💡 Investigation Protocol</h2>
-        <table>
-            <tr>
-                <th>Step</th>
-                <th>Action</th>
-                <th>Timeline</th>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Cross-reference with facility logs</td>
-                <td>24 hours</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Check staff roster for absences</td>
-                <td>24 hours</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Review equipment maintenance records</td>
-                <td>48 hours</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Check calendar for holidays/events</td>
-                <td>24 hours</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>Interview donation center staff</td>
-                <td>48 hours</td>
-            </tr>
-            <tr>
-                <td>6</td>
-                <td>Document root cause & resolution</td>
-                <td>7 days</td>
-            </tr>
-        </table>
-
-        <div class="insight">
-            <strong>📊 Key Findings</strong>
-            <ul>
-                <li>Ensemble method (2+ agreement) = 99% precision</li>
-                <li>Monthly baseline anomaly count: 1-3 expected</li>
-                <li>Hospital-level detection catches local issues</li>
-                <li>Root cause classification improves response time</li>
-            </ul>
+            <strong>Alert Thresholds:</strong><br>
+            Level 1 (GREEN): ±1.5σ - Monitor<br>
+            Level 2 (YELLOW): ±2.5σ - Investigate<br>
+            Level 3 (RED): >3σ - Escalate
         </div>
         
         
-        <div class="section-divider"></div>
+        <hr style="margin: 50px 0;">
         <div class="nav-section">
             <a href="index.html" class="nav-btn">🏠 Home</a>
             <a href="part1a.html" class="nav-btn">📊 Part 1a</a>
@@ -385,36 +272,12 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 Bank Negara Malaysia | Data Science Assessment Suite</p>
-        <p><small>All analysis generated and visualized with latest data</small></p>
+        <p>&copy; 2026 Bank Negara Malaysia | Data Science Assessment</p>
+        <p><small>Analysis Results with Interactive Charts</small></p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        
-        const anomalyCtx = document.getElementById('anomalyChart').getContext('2d');
-        new Chart(anomalyCtx, {
-            type: 'line',
-            data: {
-                labels: Array.from({length: 100}, (_, i) => i),
-                datasets: [{
-                    label: 'Daily Donations',
-                    data: Array.from({length: 100}, () => Math.random() * 200 + 900),
-                    borderColor: '#667eea',
-                    backgroundColor: 'rgba(102, 126, 234, 0.1)',
-                    fill: true,
-                    tension: 0.4,
-                    pointRadius: 2,
-                    pointBackgroundColor: '#667eea'
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: { legend: { display: false } },
-                scales: { y: { beginAtZero: true } }
-            }
-        });
         
     </script>
 </body>

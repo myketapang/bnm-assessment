@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Part 1a: Blood Donor Retention Analysis</title>
+    <title>Part 1a: Blood Donor Retention</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
     <style>
@@ -89,15 +89,6 @@
             border-radius: 10px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
-        .chart-container-small {
-            position: relative;
-            width: 100%;
-            height: 300px;
-            margin: 20px 0;
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 8px;
-        }
         table {
             width: 100%;
             border-collapse: collapse;
@@ -119,9 +110,6 @@
         }
         table tr:hover {
             background: #f5f5f5;
-        }
-        table tr:last-child td {
-            border-bottom: none;
         }
         .nav-section {
             display: flex;
@@ -165,9 +153,6 @@
             margin: 8px 0;
             color: #333;
         }
-        .row-gap {
-            margin-bottom: 40px;
-        }
         footer {
             background: #222;
             color: white;
@@ -176,33 +161,19 @@
             margin-top: 60px;
             border-top: 3px solid #667eea;
         }
-        footer p {
-            margin: 5px 0;
-        }
-        .grid-2 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin: 30px 0;
-        }
-        .section-divider {
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #667eea, transparent);
-            margin: 50px 0;
-        }
     </style>
 </head>
 <body>
     <nav class="navbar navbar-dark">
         <div class="container-fluid">
             <span class="navbar-brand">🏦 BNM Assessment Suite</span>
-            <span style="color: white;">Part 1a - Retention</span>
+            <span style="color: white;">Part 1a</span>
         </div>
     </nav>
 
     <div class="container">
-        <h1>Part 1a: Blood Donor Retention Analysis</h1>
-        <p class="subtitle">Generated: 2026-03-06 12:23:12</p>
+        <h1>Part 1a: Blood Donor Retention</h1>
+        <p class="subtitle">Generated: 2026-03-06 21:22:35</p>
         
         
         <div class="metric-cards">
@@ -224,272 +195,98 @@
             </div>
         </div>
 
-        <h2>📊 Overall Retention Metrics</h2>
+        <h2>Retention Metrics</h2>
         <table>
             <tr>
                 <th>Metric</th>
                 <th>Value</th>
-                <th>Analysis</th>
             </tr>
             <tr>
                 <td>Total Donors</td>
                 <td>10,000</td>
-                <td>Complete donor base for analysis</td>
             </tr>
             <tr>
-                <td>Total Donations</td>
-                <td>50,000</td>
-                <td>5.0 average per donor</td>
-            </tr>
-            <tr>
-                <td>Repeat Donors (2+)</td>
-                <td>3,500</td>
-                <td>35% repeat rate (international: 45-60%)</td>
+                <td>Repeat Donors</td>
+                <td>3,500 (35%)</td>
             </tr>
             <tr>
                 <td>Single-time Donors</td>
-                <td>6,500</td>
-                <td>Critical intervention needed</td>
+                <td>6,500 (65%)</td>
             </tr>
         </table>
 
-        <h2>👥 Retention by Age Group</h2>
+        <h2>By Age Group</h2>
         <div class="chart-container">
             <canvas id="ageChart"></canvas>
         </div>
         
         <table>
             <tr>
-                <th>Age Group</th>
+                <th>Age</th>
                 <th>Donors</th>
-                <th>Repeat Rate</th>
-                <th>Avg Donations</th>
+                <th>Repeat %</th>
             </tr>
             <tr>
                 <td>18-25</td>
                 <td>1,543</td>
                 <td>32.0%</td>
-                <td>4.8</td>
             </tr>
             <tr>
                 <td>26-35</td>
                 <td>2,467</td>
                 <td>35.5%</td>
-                <td>5.1</td>
             </tr>
             <tr>
                 <td>36-45</td>
                 <td>2,480</td>
                 <td>36.0%</td>
-                <td>5.2</td>
             </tr>
             <tr>
                 <td>46-55</td>
                 <td>1,963</td>
                 <td>35.0%</td>
-                <td>5.0</td>
             </tr>
             <tr>
                 <td>56+</td>
                 <td>1,547</td>
                 <td>37.0%</td>
-                <td>5.3</td>
             </tr>
         </table>
 
-        <h2>⚧ Retention by Gender</h2>
-        <div class="grid-2">
-            <div class="chart-container-small">
-                <canvas id="genderChart"></canvas>
-            </div>
-            <div>
-                <table>
-                    <tr>
-                        <th>Gender</th>
-                        <th>Donors</th>
-                        <th>Repeat Rate</th>
-                    </tr>
-                    <tr>
-                        <td>Female</td>
-                        <td>4,547</td>
-                        <td>34.0%</td>
-                    </tr>
-                    <tr>
-                        <td>Male</td>
-                        <td>5,453</td>
-                        <td>35.5%</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-
-        <h2>🎁 Retention by Donor Type</h2>
+        <h2>By Donor Type</h2>
         <div class="chart-container">
             <canvas id="typeChart"></canvas>
         </div>
         
         <table>
             <tr>
-                <th>Donor Type</th>
+                <th>Type</th>
                 <th>Donors</th>
-                <th>Repeat Rate</th>
-                <th>Avg Donations</th>
+                <th>Repeat %</th>
             </tr>
             <tr>
                 <td>First-time</td>
                 <td>3,002</td>
                 <td>25.0%</td>
-                <td>3.5</td>
             </tr>
             <tr>
                 <td>Replacement</td>
                 <td>3,998</td>
                 <td>35.0%</td>
-                <td>5.0</td>
             </tr>
             <tr>
                 <td>Voluntary</td>
                 <td>3,000</td>
                 <td>48.0%</td>
-                <td>6.2</td>
-            </tr>
-        </table>
-
-        <h2>⏰ Critical Retention Window</h2>
-        <div class="insight">
-            <strong>🎯 KEY FINDING:</strong> 5% of all donors return within 30 days.
-            <ul>
-                <li>Within 30 days: 125 donors (5.0%)</li>
-                <li>Within 90 days: 450 donors (18.0%)</li>
-                <li>Within 180 days: 975 donors (39.0%)</li>
-                <li>Within 365 days: 1,750 donors (70.0%)</li>
-            </ul>
-            <strong>Action:</strong> Focus retention efforts in the first 30 days for maximum ROI
-        </div>
-
-        <h2>🎯 Donor Segmentation Strategy</h2>
-        <table>
-            <tr>
-                <th>Segment</th>
-                <th>Count</th>
-                <th>%</th>
-                <th>Recommended Action</th>
-                <th>Priority</th>
-            </tr>
-            <tr>
-                <td>At-Risk (New)</td>
-                <td>1,500</td>
-                <td>15%</td>
-                <td>SMS Day 7 + Call Day 14 + Incentive Day 21</td>
-                <td>🔴 CRITICAL</td>
-            </tr>
-            <tr>
-                <td>At-Risk (Low Activity)</td>
-                <td>1,200</td>
-                <td>12%</td>
-                <td>Email campaign + SMS reminder + Call center</td>
-                <td>🟠 HIGH</td>
-            </tr>
-            <tr>
-                <td>At-Risk (Lapsed)</td>
-                <td>2,600</td>
-                <td>26%</td>
-                <td>Postcard + Volunteer call + Gift incentive</td>
-                <td>🟡 MEDIUM</td>
-            </tr>
-            <tr>
-                <td>Active (Regular)</td>
-                <td>2,700</td>
-                <td>27%</td>
-                <td>VIP recognition + Quarterly updates</td>
-                <td>🟢 LOW</td>
-            </tr>
-            <tr>
-                <td>Loyal (Super)</td>
-                <td>2,000</td>
-                <td>20%</td>
-                <td>Ambassador program + Annual event</td>
-                <td>🔵 MAINTAIN</td>
-            </tr>
-        </table>
-
-        <h2>💰 ROI Projection</h2>
-        <div class="metric-cards">
-            <div class="metric-card">
-                <div class="metric-label">Base Annual Collections</div>
-                <div class="metric-value">200,000</div>
-            </div>
-            <div class="metric-card">
-                <div class="metric-label">Additional Collections</div>
-                <div class="metric-value">45,000</div>
-            </div>
-            <div class="metric-card">
-                <div class="metric-label">Investment Required</div>
-                <div class="metric-value">RM 850K/yr</div>
-            </div>
-            <div class="metric-card">
-                <div class="metric-label">ROI Ratio</div>
-                <div class="metric-value">53:1</div>
-            </div>
-        </div>
-
-        <h2>🌍 International Benchmarking</h2>
-        <div class="chart-container">
-            <canvas id="benchmarkChart"></canvas>
-        </div>
-        
-        <table>
-            <tr>
-                <th>Country</th>
-                <th>Repeat Rate %</th>
-                <th>Avg Donations</th>
-                <th>Status vs Malaysia</th>
-            </tr>
-            <tr>
-                <td>Malaysia (Current)</td>
-                <td>35%</td>
-                <td>4.2</td>
-                <td>🔴 Below Target</td>
-            </tr>
-            <tr>
-                <td>Australia (ARCBS)</td>
-                <td>52%</td>
-                <td>8.2</td>
-                <td>✅ +48% Better</td>
-            </tr>
-            <tr>
-                <td>UK (NHS) - TARGET</td>
-                <td>48%</td>
-                <td>7.5</td>
-                <td>✅ +37% Better</td>
-            </tr>
-            <tr>
-                <td>USA (AABB)</td>
-                <td>45%</td>
-                <td>6.8</td>
-                <td>✅ +29% Better</td>
-            </tr>
-            <tr>
-                <td>Japan (Best)</td>
-                <td>60%</td>
-                <td>9.5</td>
-                <td>✅ +71% Better</td>
             </tr>
         </table>
 
         <div class="insight">
-            <strong>🎯 Strategic Target:</strong> Reach 48% repeat rate (UK standard) in 3-5 years
-            <ul>
-                <li>Current: 35% repeat rate (3,500 repeat donors)</li>
-                <li>Target: 48% repeat rate (4,800 repeat donors)</li>
-                <li>Additional donors needed: 1,300</li>
-                <li>Expected impact: +1.1M blood units/year</li>
-                <li>Implementation: Tiered targeting strategy with focus on critical 30-day window</li>
-            </ul>
+            <strong>🎯 Key Finding:</strong> 5% return within 30 days - Critical intervention window
         </div>
         
         
-        <div class="section-divider"></div>
+        <hr style="margin: 50px 0;">
         <div class="nav-section">
             <a href="index.html" class="nav-btn">🏠 Home</a>
             <a href="part1a.html" class="nav-btn">📊 Part 1a</a>
@@ -501,102 +298,37 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 Bank Negara Malaysia | Data Science Assessment Suite</p>
-        <p><small>All analysis generated and visualized with latest data</small></p>
+        <p>&copy; 2026 Bank Negara Malaysia | Data Science Assessment</p>
+        <p><small>Analysis Results with Interactive Charts</small></p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         
-        // Age group chart
-        const ageCtx = document.getElementById('ageChart').getContext('2d');
-        new Chart(ageCtx, {
+        new Chart(document.getElementById('ageChart'), {
             type: 'bar',
             data: {
                 labels: ['18-25', '26-35', '36-45', '46-55', '56+'],
                 datasets: [{
                     label: 'Repeat Rate %',
-                    data: [32.0, 35.5, 36.0, 35.0, 37.0],
-                    backgroundColor: ['#667eea', '#764ba2', '#f093fb', '#4facfe', '#00f2fe'],
-                    borderRadius: 8,
-                    borderSkipped: false
+                    data: [32, 35.5, 36, 35, 37],
+                    backgroundColor: ['#667eea', '#764ba2', '#f093fb', '#4facfe', '#00f2fe']
                 }]
             },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: { legend: { display: false } },
-                scales: { y: { beginAtZero: true, max: 40 } }
-            }
+            options: { responsive: true, maintainAspectRatio: false }
         });
 
-        // Gender chart
-        const genderCtx = document.getElementById('genderChart').getContext('2d');
-        new Chart(genderCtx, {
-            type: 'doughnut',
-            data: {
-                labels: ['Female (34.0%)', 'Male (35.5%)'],
-                datasets: [{
-                    data: [34.0, 35.5],
-                    backgroundColor: ['#f093fb', '#667eea'],
-                    borderWidth: 2,
-                    borderColor: '#fff'
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: { legend: { position: 'bottom' } }
-            }
-        });
-
-        // Donor type chart
-        const typeCtx = document.getElementById('typeChart').getContext('2d');
-        new Chart(typeCtx, {
+        new Chart(document.getElementById('typeChart'), {
             type: 'bar',
             data: {
                 labels: ['First-time', 'Replacement', 'Voluntary'],
                 datasets: [{
                     label: 'Repeat Rate %',
-                    data: [25.0, 35.0, 48.0],
-                    backgroundColor: ['#4facfe', '#667eea', '#764ba2'],
-                    borderRadius: 8,
-                    borderSkipped: false
+                    data: [25, 35, 48],
+                    backgroundColor: ['#4facfe', '#667eea', '#764ba2']
                 }]
             },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: { legend: { display: false } },
-                scales: { y: { beginAtZero: true, max: 50 } }
-            }
-        });
-
-        // Benchmark chart
-        const benchmarkCtx = document.getElementById('benchmarkChart').getContext('2d');
-        new Chart(benchmarkCtx, {
-            type: 'radar',
-            data: {
-                labels: ['Malaysia', 'Australia', 'UK', 'USA', 'Japan'],
-                datasets: [{
-                    label: 'Repeat Rate %',
-                    data: [35, 52, 48, 45, 60],
-                    borderColor: '#667eea',
-                    backgroundColor: 'rgba(102, 126, 234, 0.1)',
-                    fill: true,
-                    pointBackgroundColor: '#667eea',
-                    pointBorderColor: '#fff',
-                    pointBorderWidth: 2,
-                    pointRadius: 5,
-                    pointHoverRadius: 7
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: { legend: { position: 'bottom' } },
-                scales: { r: { beginAtZero: true, max: 65 } }
-            }
+            options: { responsive: true, maintainAspectRatio: false }
         });
         
     </script>
