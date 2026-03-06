@@ -16,7 +16,7 @@ print("="*80 + "\n")
 
 # Step 1: Run RUN_ALL_ANALYSIS.py to print all analysis output
 try:
-    subprocess.run([sys.executable, 'run_all_assessments.py'], check=False)
+    subprocess.run([sys.executable, 'RUN_ALL_ANALYSIS.py'], check=False)
 except Exception as e:
     print(f"⚠️  Could not run analysis: {e}\n")
 
