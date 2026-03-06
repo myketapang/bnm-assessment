@@ -1,0 +1,174 @@
+BNM-DATA-SCIENTIST-ASSESSMENT/
+│
+├── README.md                          # Main project documentation
+├── LICENSE                            # MIT License
+├── .gitignore                         # Git ignore rules
+├── DEPLOYMENT.md                      # Deployment guide (Netlify, GitHub Pages)
+├── CONTRIBUTING.md                    # Contribution guidelines
+│
+├── requirements.txt                   # Python dependencies (pinned versions)
+├── setup.py                          # Python package setup
+├── .github/
+│   ├── workflows/
+│   │   ├── tests.yml                 # CI/CD pipeline (GitHub Actions)
+│   │   └── deploy.yml                # Auto-deploy to Netlify
+│   └── ISSUE_TEMPLATE/
+│       ├── bug_report.md
+│       └── feature_request.md
+│
+├── src/                              # Source code
+│   ├── __init__.py
+│   ├── config.py                     # Configuration management
+│   ├── utils.py                      # Utility functions
+│   ├── data/
+│   │   ├── __init__.py
+│   │   ├── loaders.py                # Data loading functions
+│   │   └── validators.py             # Data validation
+│   ├── models/
+│   │   ├── __init__.py
+│   │   ├── retention.py              # Part 1a: Retention models
+│   │   ├── outlier.py                # Part 1b: Outlier detection
+│   │   ├── hansards.py               # Part 2: Hansards processing
+│   │   ├── nowcasting.py             # Part 3: Nowcasting models
+│   │   └── sara.py                   # Part 4: SARA assessment
+│   ├── analysis/
+│   │   ├── __init__.py
+│   │   ├── part_1a_retention.py      # Retention analysis script
+│   │   ├── part_1b_outlier.py        # Outlier detection script
+│   │   ├── part_2_hansards.py        # Hansards analysis script
+│   │   ├── part_3_nowcasting.py      # Nowcasting script
+│   │   └── part_4_sara.py            # SARA assessment script
+│   └── visualization/
+│       ├── __init__.py
+│       ├── charts.py                 # Chart generation
+│       └── dashboards.py             # Dashboard utilities
+│
+├── notebooks/                        # Jupyter notebooks for exploration
+│   ├── 01_blood_donor_retention.ipynb
+│   ├── 02_outlier_detection.ipynb
+│   ├── 03_hansards_analysis.ipynb
+│   ├── 04_nowcasting.ipynb
+│   └── 05_sara_assessment.ipynb
+│
+├── tests/                            # Unit and integration tests
+│   ├── __init__.py
+│   ├── conftest.py                   # Pytest configuration
+│   ├── test_data_loaders.py
+│   ├── test_retention_model.py
+│   ├── test_outlier_detection.py
+│   ├── test_hansards_processing.py
+│   ├── test_nowcasting_model.py
+│   ├── test_sara_assessment.py
+│   └── test_integration.py
+│
+├── data/                             # Data directories
+│   ├── raw/                          # Raw input data
+│   │   ├── .gitkeep
+│   │   └── README.md
+│   ├── processed/                    # Processed data
+│   │   ├── .gitkeep
+│   │   └── README.md
+│   └── external/                     # External reference data
+│       ├── .gitkeep
+│       └── README.md
+│
+├── outputs/                          # Analysis outputs
+│   ├── reports/                      # Generated reports
+│   │   ├── .gitkeep
+│   │   └── README.md
+│   ├── figures/                      # Generated visualizations
+│   │   ├── .gitkeep
+│   │   └── README.md
+│   └── dashboards/                   # Dashboard HTML files
+│       ├── .gitkeep
+│       └── README.md
+│
+├── web/                              # Web application (Netlify deployment)
+│   ├── index.html                    # Main landing page
+│   ├── css/
+│   │   ├── style.css                 # Main stylesheet
+│   │   └── responsive.css            # Responsive design
+│   ├── js/
+│   │   ├── main.js                   # Main JavaScript
+│   │   ├── api.js                    # API client
+│   │   └── charts.js                 # Chart interactivity
+│   ├── dashboard.html                # Interactive dashboard
+│   ├── api/
+│   │   └── functions.js              # Netlify serverless functions (if needed)
+│   └── assets/
+│       ├── images/
+│       ├── data/
+│       └── icons/
+│
+├── docs/                             # Documentation
+│   ├── index.md                      # Documentation home
+│   ├── INSTALLATION.md               # Installation guide
+│   ├── USAGE.md                      # Usage guide
+│   ├── API.md                        # API documentation
+│   ├── METHODOLOGY.md                # Methodology details
+│   ├── ARCHITECTURE.md               # System architecture
+│   ├── CONTRIBUTING.md               # Contribution guidelines
+│   └── images/
+│       └── .gitkeep
+│
+├── scripts/                          # Utility scripts
+│   ├── run_analysis.sh               # Run all analyses
+│   ├── run_tests.sh                  # Run tests
+│   ├── build_web.sh                  # Build web assets
+│   ├── deploy.sh                     # Deployment script
+│   └── setup_env.sh                  # Environment setup
+│
+├── docker/                           # Docker configuration
+│   ├── Dockerfile                    # Production Docker image
+│   ├── Dockerfile.dev                # Development Docker image
+│   └── docker-compose.yml            # Docker Compose configuration
+│
+├── config/                           # Configuration files
+│   ├── default.yaml                  # Default configuration
+│   ├── development.yaml              # Development configuration
+│   ├── production.yaml               # Production configuration
+│   └── testing.yaml                  # Testing configuration
+│
+├── .env.example                      # Example environment variables
+├── .github/workflows/
+│   └── python-app.yml               # Python application workflow
+│
+├── netlify.toml                      # Netlify configuration
+├── vercel.json                       # Vercel configuration (optional)
+├── .nojekyll                         # Disable Jekyll for GitHub Pages
+│
+└── VERSION                           # Version file
+
+
+KEY FILES SUMMARY:
+─────────────────
+
+CORE FILES:
+  • src/          → All Python analysis code (modular, tested)
+  • tests/        → Unit & integration tests
+  • notebooks/    → Jupyter notebooks for exploration
+  
+WEB DEPLOYMENT:
+  • web/          → HTML/CSS/JS for Netlify hosting
+  • netlify.toml  → Netlify configuration
+  • .nojekyll     → GitHub Pages configuration
+
+DOCUMENTATION:
+  • docs/         → Full documentation
+  • README.md     → Main project page
+  • DEPLOYMENT.md → Deployment instructions
+
+CONFIGURATION:
+  • requirements.txt     → Python dependencies
+  • .env.example         → Environment template
+  • config/              → Configuration files
+
+CI/CD:
+  • .github/workflows/   → GitHub Actions pipelines
+  • docker/              → Docker configurations
+  • scripts/             → Utility shell scripts
+
+DATA:
+  • data/raw/            → Input data (gitignored)
+  • data/processed/      → Output data (gitignored)
+  • outputs/             → Analysis outputs (gitignored)
