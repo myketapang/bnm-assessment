@@ -1,13 +1,17 @@
 #!/usr/bin/env python3
-import json
 import pymysql
 import argparse
 from datetime import datetime
 import sys
 import glob
 import re
+import os
+import json
 
-with open('config.json', 'r') as f:
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+config_path = os.path.join(BASE_DIR, "config.json")
+
+with open(config_path, "r") as f:
     CONFIG = json.load(f)
 
 # Load identity map
